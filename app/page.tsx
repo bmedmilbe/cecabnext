@@ -1,3 +1,10 @@
+import { Suspense } from "react";
+import HomePosts from "./components/HomePosts";
+
 export default function Home() {
-  return <h1>Hello Word from CECAB/STP</h1>;
+  return (
+    <Suspense fallback={`...loading`}>
+      <HomePosts />
+    </Suspense>
+  );
 }
