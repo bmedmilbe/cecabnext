@@ -5,7 +5,7 @@ import { ActionAPIResponseList, PaginatedResult } from "./global";
 
 export async function GeneralListAction<T>(
   endpoint: string,
-  nextPage: string | null,
+  nextPage: string | null = null,
 ): Promise<ActionAPIResponseList<T>> {
   try {
     const results = await apiRequest<PaginatedResult<T>>(
