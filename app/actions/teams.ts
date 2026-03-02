@@ -12,4 +12,4 @@ export interface Team {
   role: Role;
 }
 export const TeamListAction = async () =>
-  await GeneralListAction<Team>("/cecab/teams/");
+  await GeneralListAction<Team>("/cecab/teams/", null);
