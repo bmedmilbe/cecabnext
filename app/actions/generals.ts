@@ -1,7 +1,12 @@
 "use server";
 
 import apiRequest from "@/lib/api-client";
-import { ActionAPIResponseList, PaginatedResult } from "./global";
+import {
+  ActionAPIResponse,
+  ActionAPIResponseList,
+  PaginatedResult,
+} from "./global";
+import { Post } from "./posts";
 
 export async function GeneralListAction<T>(
   endpoint: string,
@@ -16,15 +21,37 @@ export async function GeneralListAction<T>(
 
     return {
       success: true,
-      message: "Pathner fetched successfully",
+      message: "Fetched successfully " + endpoint,
       data: results.data,
     };
   } catch (error: any) {
-    console.error("Pathner fetching error", error);
+    console.error("Fetching error " + endpoint, error);
 
     return {
       success: false,
-      message: "Failed to fetch pathners",
+      message: "Failed to fetch pathners " + endpoint,
+      error: error.message || "Internal Server Error",
+    };
+  }
+}
+
+export async function GetGeneralAction<T>(
+  endpoint: string,
+): Promise<ActionAPIResponse<T>> {
+  try {
+    const results = await apiRequest<T>(endpoint);
+
+    return {
+      success: true,
+      message: "Fetched successfully " + endpoint,
+      data: results.data,
+    };
+  } catch (error: any) {
+    console.error("Fetching error  " + endpoint, error);
+
+    return {
+      success: false,
+      message: "Failed to fetch " + endpoint,
       error: error.message || "Internal Server Error",
     };
   }

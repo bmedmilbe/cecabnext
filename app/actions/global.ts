@@ -3,7 +3,7 @@ type BaseResponse = { message: string };
 export type ActionAPIResponse<T> =
   | (BaseResponse & {
       success: true;
-      data: T;
+      data?: T;
       error?: never;
       errors?: never;
       status?: number;
