@@ -1,5 +1,5 @@
-import { GolListAction } from "../actions/gols";
-import YearGols from "./YearGols";
+import { GolListAction } from "../../actions/gols";
+import YearGols from "./../YearGols";
 
 const YearGolsLoader = async () => {
   const goals = await GolListAction();

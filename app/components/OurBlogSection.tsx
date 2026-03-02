@@ -1,7 +1,7 @@
 "use client";
 
 import { Post } from "../actions/posts";
-import BlogCardsInfinity from "./BlogCardsInfinity";
+import BlogCardsInfinity from "./infinities/BlogCardsInfinity";
 
 interface Props {
   postsi: Post[];

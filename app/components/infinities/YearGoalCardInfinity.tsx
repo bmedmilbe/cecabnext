@@ -1,20 +1,16 @@
 "use client";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { useInView } from "react-intersection-observer";
-import { Association, AssociationsListAction } from "../actions/associations";
-import AssociationCard from "./AssociationCard";
+import { GolListAction, YearGol } from "@/app/actions/gols";
+import YearGoalCard from "../YearGoalCard";
 
 interface Props {
-  associations: Association[];
+  postsi: YearGol[];
   nextPage: string | null;
 }
 
-const AssociationCardsInfinity = ({
-  associations: initialAssociations,
-  nextPage,
-}: Props) => {
-  const [associations, setAssociations] =
-    useState<Association[]>(initialAssociations);
+const YearGoalCardInfinity = ({ postsi, nextPage }: Props) => {
+  const [posts, setPosts] = useState<YearGol[]>(postsi);
   const [currentNextPage, setCurrentNextPage] = useState(nextPage);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -33,7 +29,7 @@ const AssociationCardsInfinity = ({
 
     try {
       console.log("Fetching URL:", currentNextPage);
-      const response = await AssociationsListAction(currentNextPage);
+      const response = await GolListAction(currentNextPage);
 
       if (response?.data) {
         const newPosts = response.data.results || [];
@@ -42,7 +38,7 @@ const AssociationCardsInfinity = ({
 
         console.log("Received Next URL:", nextUrl);
 
-        setAssociations((prev) => [...prev, ...newPosts]);
+        setPosts((prev) => [...prev, ...newPosts]);
         setCurrentNextPage(nextUrl);
       }
     } catch (error) {
@@ -62,9 +58,9 @@ const AssociationCardsInfinity = ({
   return (
     <>
       <div className="row justify-content-center">
-        {associations.map((post, index) => (
+        {posts.map((post, index) => (
           // Using index + id to ensure unique keys if IDs repeat
-          <AssociationCard key={`${post.id}-${index}`} association={post} />
+          <YearGoalCard key={`${post.id}-${index}`} year={post} />
         ))}
       </div>
 
@@ -88,4 +84,4 @@ const AssociationCardsInfinity = ({
   );
 };
 
-export default AssociationCardsInfinity;
+export default YearGoalCardInfinity;

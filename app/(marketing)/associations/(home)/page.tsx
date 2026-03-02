@@ -1,7 +1,5 @@
 import { AssociationsListAction } from "@/app/actions/associations";
-import { PostListAction } from "@/app/actions/posts";
-import AssociationCardsInfinity from "@/app/components/AssociationCardsInfinity";
-import BlogCardsInfinity from "@/app/components/BlogCardsInfinity";
+import AssociationCardsInfinity from "@/app/components/infinities/AssociationCardsInfinity";
 
 const AssossiationsPage = async () => {
   const associations = await AssociationsListAction();
