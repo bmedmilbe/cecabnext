@@ -9,7 +9,7 @@ const apiRequest = async <T>(
   try {
     const url = `${process.env.API_BASE_URL || "http://localhost:8000"}${endpoint}`;
 
-    const response = await fetch(url, { ...params });
+    const response = await fetch(url, { ...params, cache: "no-store" });
 
     const playload = await response.json().catch(() => null);
 
