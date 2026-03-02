@@ -1,20 +1,20 @@
 import Link from "next/link";
-import type { PostHome } from "../../hooks/common/usePostsHome";
+import { Post } from "../actions/posts";
 interface Props {
-  post: PostHome;
+  post: Post;
 }
 const BlogSideCard = ({ post }: Props) => {
   return (
     <>
       <article className="item">
         <Link href={`/blogs/${post.slug}`}>
-          <a className="thumb" href={`/blogs/${post.slug}`}>
+          <span className="thumb">
             <span
               className="fullimage cover"
               style={{ backgroundImage: `url(${post.picture})` }}
               role="img"
             ></span>
-          </a>
+          </span>
         </Link>
 
         <div className="info">

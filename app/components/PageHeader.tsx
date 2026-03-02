@@ -26,8 +26,8 @@ const PageHeader = ({ title, image, other }: Props) => {
                     <span>Início</span>
                   </Link>
                 </li>
-                {other?.map((o) => (
-                  <li>
+                {other?.map((o, index) => (
+                  <li key={index}>
                     <Link href={o.link}>{o.title}</Link>
                   </li>
                 ))}

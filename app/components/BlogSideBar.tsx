@@ -1,22 +1,20 @@
-import { usePostsHome, type PostHome } from "../../hooks/common/usePostsHome";
+import { Post, PostListAction } from "../actions/posts";
 import BlogSideCard from "./BlogSideCard";
-import Spinner from "./Spinner";
 interface Props {
-  post: PostHome;
+  post: Post;
 }
-const BlogSideBar = ({ post }: Props) => {
-  const { data, isLoading } = usePostsHome();
-  if (isLoading) return <Spinner />;
+const BlogSideBar = async ({ post }: Props) => {
+  const response = await PostListAction();
   return (
     <>
       <aside className="widget-area pt-3" id="secondary">
         <div className="widget widget_zash_posts_thumb">
           <h3 className="widget-title">Outras Actividades</h3>
 
-          {data
+          {response.data?.results
             ?.filter((c) => c.id != post.id)
-            ?.map((currentPost) => (
-              <BlogSideCard post={currentPost} />
+            ?.map((targetPost) => (
+              <BlogSideCard post={targetPost} key={targetPost.id} />
             ))}
         </div>
       </aside>
