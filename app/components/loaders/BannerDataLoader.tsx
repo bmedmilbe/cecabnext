@@ -1,6 +1,6 @@
-import { sliderData } from "./../data/data";
-import { PostListAction } from "../actions/posts";
-import Banner from "./Banner";
+import { sliderData } from "../../data/data";
+import { PostListAction } from "../../actions/posts";
+import Banner from "../Banner";
 
 const BannerDataLoader = async () => {
   const posts = await PostListAction();

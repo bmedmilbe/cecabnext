@@ -1,5 +1,5 @@
 import { PostListAction } from "@/app/actions/posts";
-import BlogCardsInfinity from "@/app/components/BlogCardsInfinity";
+import BlogCardsInfinity from "@/app/components/infinities/BlogCardsInfinity";
 
 const BlogsPage = async () => {
   const postsi = await PostListAction();

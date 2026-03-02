@@ -9,5 +9,5 @@ export interface YearGol {
   products: number;
 }
 
-export const GolListAction = async () =>
-  await GeneralListAction<YearGol>("/cecab/yeargols/");
+export const GolListAction = async (nextPage: string | null = null) =>
+  await GeneralListAction<YearGol>("/cecab/yeargols/", nextPage);

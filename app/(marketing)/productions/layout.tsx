@@ -1,20 +1,20 @@
-import YearGolsLoader from "@/app/components/loaders/YearGolsLoader";
+import ParthnersLoader from "@/app/components/loaders/ParthnersLoader";
 import PageHeader from "@/app/components/PageHeader";
 import React from "react";
 interface Props {
   children: React.ReactNode;
 }
-const AssossiationsPageLayout = ({ children }: Props) => {
+const ProductionsPageLayout = ({ children }: Props) => {
   return (
     <>
-      <PageHeader title="Associações" image="images/about/cacau13.JPG" />
+      <PageHeader title="Produções" image="images/about/cacau11.jpg" />
 
       <div className="container mt-4">{children}</div>
       <div className="section-bg-white">
-        <YearGolsLoader />
+        <ParthnersLoader />
       </div>
     </>
   );
 };
 
-export default AssossiationsPageLayout;
+export default ProductionsPageLayout;
