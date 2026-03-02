@@ -6,7 +6,8 @@ import About from "../components/About";
 import Banner from "../components/Banner";
 import JoinNow from "../components/JoinNow";
 import Medias from "../components/Medias";
-import OurBlog from "../components/OurBlog";
+import OurBlogSection from "../components/OurBlogSection";
+import OurBlog from "../components/OurBlogSection";
 import OurTeamSlider from "../components/OurTeamSlider";
 import Partners from "../components/Partners";
 import WhyChooseUs from "../components/WhyChooseUs";
@@ -30,7 +31,7 @@ export default async function Home() {
       <JoinNow />
       <Medias />
       <OurTeamSlider teams={[...(teams.data?.results || [])]} />
-      <OurBlog
+      <OurBlogSection
         postsi={[...(postsi.data?.results || [])]}
         nextPage={postsi.data?.next || null}
       />

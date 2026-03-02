@@ -9,7 +9,7 @@ interface Props {
   nextPage: string | null;
 }
 
-const OurBlog = ({ postsi, nextPage }: Props) => {
+const BlogCardsInfinity = ({ postsi, nextPage }: Props) => {
   const [posts, setPosts] = useState<Post[]>(postsi);
   const [currentNextPage, setCurrentNextPage] = useState(nextPage);
   const [isLoading, setIsLoading] = useState(false);
@@ -56,39 +56,32 @@ const OurBlog = ({ postsi, nextPage }: Props) => {
   }, [inView, loadMorePosts]);
 
   return (
-    <section className="blog-area">
-      <div className="container">
-        <div className="section-title">
-          <span className="sub-title">Blog CECAB</span>
-          <h2>Notícias e Realizações</h2>
-        </div>
+    <>
+      <div className="row justify-content-center">
+        {posts.map((post, index) => (
+          // Using index + id to ensure unique keys if IDs repeat
+          <BlogCard key={`${post.id}-${index}`} post={post} />
+        ))}
+      </div>
 
-        <div className="row justify-content-center">
-          {posts.map((post, index) => (
-            // Using index + id to ensure unique keys if IDs repeat
-            <BlogCard key={`${post.id}-${index}`} post={post} />
-          ))}
-        </div>
-
-        {currentNextPage && (
-          <div className="row">
-            <div className="col-lg-12 text-center">
-              {/* This span triggers the load */}
-              <div ref={ref} style={{ padding: "20px" }}>
-                {isLoading ? (
-                  <div className="spinner-border text-primary" role="status">
-                    <span className="visually-hidden">Carregando...</span>
-                  </div>
-                ) : (
-                  <span className="other-link">Ver mais</span>
-                )}
-              </div>
+      {currentNextPage && (
+        <div className="row">
+          <div className="col-lg-12 text-center">
+            {/* This span triggers the load */}
+            <div ref={ref} style={{ padding: "20px" }}>
+              {isLoading ? (
+                <div className="spinner-border text-primary" role="status">
+                  <span className="visually-hidden">Carregando...</span>
+                </div>
+              ) : (
+                <span className="other-link">Ver mais</span>
+              )}
             </div>
           </div>
-        )}
-      </div>
-    </section>
+        </div>
+      )}
+    </>
   );
 };
 
-export default OurBlog;
+export default BlogCardsInfinity;

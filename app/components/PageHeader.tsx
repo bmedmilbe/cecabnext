@@ -22,8 +22,8 @@ const PageHeader = ({ title, image, other }: Props) => {
               <h2>{title}</h2>
               <ul>
                 <li>
-                  <Link to="/">
-                    <a>Início</a>
+                  <Link href="/">
+                    <span>Início</span>
                   </Link>
                 </li>
                 {other?.map((o) => (
