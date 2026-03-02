@@ -1,4 +1,4 @@
-import PostListAction from "../actions/posts";
+import { PostListAction } from "../actions/posts";
 
 const HomePosts = async () => {
   const posts = await PostListAction();

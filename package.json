@@ -9,20 +9,24 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "bootstrap": "^5.2.3",
     "next": "16.2.0-canary.68",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "bootstrap": "^5.2.3"
+    "react-intersection-observer": "^10.0.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/fslightbox-react": "^1.8.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.0-canary.68",
+    "fslightbox-react": "^1.6.2-2",
+    "react-icons": "^4.8.0",
+    "swiper": "^8.4.2",
     "tailwindcss": "^4",
-    "typescript": "^5",
-    "swiper": "^8.4.2"
+    "typescript": "^5"
   }
 }
