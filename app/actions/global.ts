@@ -44,4 +44,4 @@ export type ActionResponse = BaseResponse & {
   error?: string;
   errors?: Record<string, string[]>;
 };
-export type ActionFormResponse = ActionResponse & { input: object };
+export type ActionFormResponse<T> = ActionResponse & { input: T };

@@ -16,15 +16,20 @@ const alertContent = () => {
     showConfirmButton: false,
   });
 };
+export type InputType = {
+  name: string;
+  email: string;
+  subject: string;
+  text: string;
+};
 const input = {
   name: "",
   email: "",
-  number: "",
   subject: "",
   text: "",
 };
 const AddressForm: React.FC = () => {
-  const initialResponse: ActionFormResponse = {
+  const initialResponse: ActionFormResponse<InputType> = {
     message: "",
     success: false,
     input,
@@ -58,6 +63,7 @@ const AddressForm: React.FC = () => {
                 placeholder="Nome"
                 className="form-control"
                 required
+                value={state.input.name}
               />
             </div>
           </div>
@@ -69,6 +75,7 @@ const AddressForm: React.FC = () => {
                 placeholder="Email"
                 className="form-control"
                 required
+                value={state.input.email}
               />
             </div>
           </div>
@@ -81,6 +88,7 @@ const AddressForm: React.FC = () => {
                 placeholder="Assunto"
                 className="form-control"
                 required
+                value={state.input.subject}
               />
             </div>
           </div>
@@ -92,12 +100,17 @@ const AddressForm: React.FC = () => {
                 rows={6} // Use number for cols/rows in TSX
                 placeholder="Escreva a tua mensagem..."
                 className="form-control"
+                value={state.input.text}
                 required
               ></textarea>
             </div>
           </div>
           <div className="col-lg-12 col-sm-12">
-            <button type="submit" className="default-btn">
+            <button
+              disabled={state.success}
+              type="submit"
+              className="default-btn"
+            >
               Enviar Messagem <span></span>
             </button>
           </div>
