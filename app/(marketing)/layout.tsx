@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, {
   useState,
   useEffect,
@@ -10,6 +11,7 @@ interface Props {
   children: React.ReactNode;
 }
 const Layout = ({ children }: Props) => {
+  const pathname = usePathname();
   const [collapsed, setCollapsed] = useState(true);
 
   // Function to toggle the collapse state
@@ -49,6 +51,7 @@ const Layout = ({ children }: Props) => {
   const preventDefault = (e: MouseEvent<HTMLAnchorElement>): void => {
     e.preventDefault();
   };
+
   return (
     <>
       <div id="navbar" className="navbar-area">
@@ -79,53 +82,79 @@ const Layout = ({ children }: Props) => {
               <div className={classOne} id="navbarSupportedContent">
                 <ul className="navbar-nav">
                   <li className="nav-item">
-                    <Link href="/" className="active">
-                      <span className="nav-link">Início</span>
+                    <Link
+                      href="/"
+                      className={`${pathname == "/" ? "active" : ""} nav-link`}
+                    >
+                      Início
                     </Link>
                   </li>
 
                   <li className="nav-item">
-                    <Link href="#">
-                      <span className="nav-link" onClick={preventDefault}>
-                        Sobre nós <i className="flaticon-down-arrow"></i>
-                      </span>
+                    <Link
+                      href={"#"}
+                      className="nav-link"
+                      onClick={preventDefault}
+                    >
+                      Sobre nós <i className="flaticon-down-arrow"></i>
                     </Link>
                     <ul className="dropdown-menu">
                       <li className="nav-item">
-                        <Link href="/associations" className="active">
-                          <span className="nav-link">Associações</span>
+                        <Link
+                          href="/associations"
+                          className={`${pathname == "/associations" ? "active" : ""} nav-link`}
+                        >
+                          Associações
                         </Link>
                       </li>
                       <li className="nav-item">
-                        <Link href="/team" className="active">
-                          <span className="nav-link">Corpo Directivo</span>
+                        <Link
+                          href="/team"
+                          className={`${pathname == "/team" ? "active" : ""} nav-link`}
+                        >
+                          Corpo Directivo
                         </Link>
                       </li>
                       <li className="nav-item">
-                        <Link href="/productions" className="active">
-                          <span className="nav-link">Produções</span>
+                        <Link
+                          href="/productions"
+                          className={`${pathname == "/productions" ? "active" : ""} nav-link`}
+                        >
+                          Produções
                         </Link>
                       </li>
                     </ul>
                   </li>
                   <li className="nav-item">
-                    <Link href="/blogs" className="active">
-                      <span className="nav-link">Actividades</span>
+                    <Link
+                      href="/blogs"
+                      className={`${pathname == "/blogs" ? "active" : ""} nav-link`}
+                    >
+                      Actividades
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link href="/programs" className="active">
-                      <span className="nav-link">Programas</span>
+                    <Link
+                      href="/programs"
+                      className={`${pathname == "/programs" ? "active" : ""} nav-link`}
+                    >
+                      Programas
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link href="/bands" className="active">
-                      <span className="nav-link">Banda CECAB</span>
+                    <Link
+                      href="/bands"
+                      className={`${pathname == "/bands" ? "active" : ""} nav-link`}
+                    >
+                      Banda CECAB
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link href="/address" className="active">
-                      <span className="nav-link">Contactos</span>
+                    <Link
+                      href="/address"
+                      className={`${pathname == "/address" ? "active" : ""} nav-link`}
+                    >
+                      Contactos
                     </Link>
                   </li>
                 </ul>
