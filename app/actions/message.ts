@@ -2,11 +2,12 @@
 
 import apiRequest from "@/lib/api-client";
 import { ActionFormResponse, ActionResponse } from "./global";
+import { InputType } from "../components/AddressForm";
 
 export default async function messageAction(
   initialState: ActionResponse,
   form: FormData,
-): Promise<ActionFormResponse> {
+): Promise<ActionFormResponse<InputType>> {
   // subject, email, text, name
   const data = {
     name: form.get("name") as string,
@@ -26,7 +27,7 @@ export default async function messageAction(
       return {
         success: true,
         message: "Message Sent",
-        input: { name: "", subject: "", text: "", email: "" },
+        input: data,
       };
     }
   } catch (error) {
