@@ -40,7 +40,8 @@ export type ActionAPIResponseList<T> =
     });
 
 export type ActionResponse = BaseResponse & {
-  success: true;
+  success: boolean;
   error?: string;
   errors?: Record<string, string[]>;
 };
+export type ActionFormResponse = ActionResponse & { input: object };
