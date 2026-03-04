@@ -27,6 +27,8 @@
     "react-icons": "^4.8.0",
     "swiper": "^8.4.2",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "sweetalert2": "^11.4.19",
+    "sweetalert2-react-content": "^5.0.0"
   }
 }

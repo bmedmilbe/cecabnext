@@ -1,19 +1,10 @@
-import React, { useState, type ChangeEvent, type FormEvent } from "react";
-import axios from "axios";
+"use client";
+import React, { useActionState, useEffect } from "react";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import { ActionFormResponse, ActionResponse } from "../actions/global";
+import messageAction from "../actions/message";
 const MySwal = withReactContent(Swal);
-// The baseUrl import seems unused in the logic, but I'll keep it for completeness
-// import baseUrl from "../../utils/baseUrl";
-
-// 1. Define the interface for the component's state
-interface ContactState {
-  name: string;
-  email: string;
-  number: string;
-  subject: string;
-  text: string;
-}
 
 const alertContent = () => {
   MySwal.fire({
@@ -25,56 +16,39 @@ const alertContent = () => {
     showConfirmButton: false,
   });
 };
-
-// 2. Form initial state (now using the defined interface)
-const INITIAL_STATE: ContactState = {
+const input = {
   name: "",
   email: "",
   number: "",
   subject: "",
   text: "",
 };
-
 const AddressForm: React.FC = () => {
-  // Use the defined interface for useState
-  const [contact, setContact] = useState<ContactState>(INITIAL_STATE);
-
-  // 3. Type the change handler with ChangeEvent
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setContact((prevState) => ({ ...prevState, [name]: value }));
+  const initialResponse: ActionFormResponse = {
+    message: "",
+    success: false,
+    input,
   };
 
-  // 4. Type the submit handler with FormEvent
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    try {
-      // It's safer to use an empty string fallback or assertion for environment variables
-      const url = `${import.meta.env.VITE_BASE_URL || ""}/cecab/messages/`;
-      const { name, email, subject, text } = contact;
+  const [state, actionForm, isPending] = useActionState(
+    messageAction,
+    initialResponse,
+  );
 
-      // We explicitly exclude 'number' from the payload as it wasn't used in the original JS payload
-      const payload = { name, email, subject, text };
-
-      // Axios automatically handles JSON serialization
-      await axios.post(url, payload);
-
-      // Optionally reset the form state after success
-      // setContact(INITIAL_STATE);
-
+  useEffect(() => {
+    if (state.success) {
       alertContent();
-    } catch (error) {
-      console.error("Submission error:", error);
-      // Optional: Add a SweetAlert for error handling here
-      // Swal.fire("Erro", "Houve um problema ao enviar a sua mensagem.", "error");
     }
-  };
+  }, [state]);
 
   return (
     <div className="contact-form">
-      <form onSubmit={handleSubmit}>
+      {state.error && (
+        <div className="alert alert-danger" role="alert">
+          Erro ao enviar, tente mais tarde.
+        </div>
+      )}
+      <form action={actionForm}>
         <div className="row">
           <div className="col-lg-6 col-md-6">
             <div className="form-group">
@@ -83,8 +57,6 @@ const AddressForm: React.FC = () => {
                 name="name"
                 placeholder="Nome"
                 className="form-control"
-                value={contact.name}
-                onChange={handleChange}
                 required
               />
             </div>
@@ -96,28 +68,10 @@ const AddressForm: React.FC = () => {
                 name="email"
                 placeholder="Email"
                 className="form-control"
-                value={contact.email}
-                onChange={handleChange}
                 required
               />
             </div>
           </div>
-
-          {/* Note: The 'number' field exists in INITIAL_STATE but is not used in the form or payload. */}
-          {/* If you wanted to include it in the form: */}
-          {/* <div className="col-lg-6 col-md-6">
-            <div className="form-group">
-              <input
-                type="text"
-                name="number"
-                placeholder="Telefone"
-                className="form-control"
-                value={contact.number}
-                onChange={handleChange}
-              />
-            </div>
-          </div>
-          */}
 
           <div className="col-lg-12 col-md-12">
             <div className="form-group">
@@ -126,8 +80,6 @@ const AddressForm: React.FC = () => {
                 name="subject"
                 placeholder="Assunto"
                 className="form-control"
-                value={contact.subject}
-                onChange={handleChange}
                 required
               />
             </div>
@@ -140,8 +92,6 @@ const AddressForm: React.FC = () => {
                 rows={6} // Use number for cols/rows in TSX
                 placeholder="Escreva a tua mensagem..."
                 className="form-control"
-                value={contact.text}
-                onChange={handleChange}
                 required
               ></textarea>
             </div>
