@@ -1,9 +1,14 @@
 "use client";
 import FsLightbox from "fslightbox-react";
 import { useState } from "react";
-import { Autoplay, Navigation } from "swiper";
+// For Swiper 8
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper"; // This is correct for v8
 
+// Import CSS (standard for v8)
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import Link from "next/link";
 
 import { Post } from "../actions/posts";

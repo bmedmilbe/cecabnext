@@ -2,6 +2,10 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
 import { Pathener } from "../actions/pathner";
+// Import CSS (standard for v8)
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 interface Props {
   pathners: Pathener[];
 }
