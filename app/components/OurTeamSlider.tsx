@@ -3,6 +3,10 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
 import { Team } from "../actions/teams";
+// Import CSS (standard for v8)
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 interface Props {
   teams: Team[];
 }
