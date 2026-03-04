@@ -9,7 +9,7 @@ const MySwal = withReactContent(Swal);
 const alertContent = () => {
   MySwal.fire({
     title: "Obrigado!",
-    text: "A sua mensagem foi recebida, vamos te reponder brevemente",
+    text: "A sua mensagem foi recebida, vamos te responder brevemente.",
     icon: "success",
     timer: 5000,
     timerProgressBar: true,
@@ -63,7 +63,7 @@ const AddressForm: React.FC = () => {
                 placeholder="Nome"
                 className="form-control"
                 required
-                value={state.input.name}
+                defaultValue={state.input.name}
               />
             </div>
           </div>
@@ -75,7 +75,7 @@ const AddressForm: React.FC = () => {
                 placeholder="Email"
                 className="form-control"
                 required
-                value={state.input.email}
+                defaultValue={state.input.email}
               />
             </div>
           </div>
@@ -88,7 +88,7 @@ const AddressForm: React.FC = () => {
                 placeholder="Assunto"
                 className="form-control"
                 required
-                value={state.input.subject}
+                defaultValue={state.input.subject}
               />
             </div>
           </div>
@@ -100,7 +100,7 @@ const AddressForm: React.FC = () => {
                 rows={6} // Use number for cols/rows in TSX
                 placeholder="Escreva a tua mensagem..."
                 className="form-control"
-                value={state.input.text}
+                defaultValue={state.input.text}
                 required
               ></textarea>
             </div>
