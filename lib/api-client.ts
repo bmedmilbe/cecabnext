@@ -15,6 +15,7 @@ const apiRequest = async <T>(
         "Content-Type": "application/json",
         ...params.headers,
       },
+      cache: "no-store",
     });
     const playload = await response.json().catch(() => null);
 
