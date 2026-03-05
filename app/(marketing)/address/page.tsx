@@ -3,7 +3,6 @@ import { FiPhoneCall } from "react-icons/fi";
 import { ImLocation } from "react-icons/im";
 import { MdEmail } from "react-icons/md";
 import AddressForm from "@/app/components/AddressForm";
-export const revalidate = 300;
 const AddressPage = () => {
   return (
     <section className="contact-area ptb-100">
