@@ -1,5 +1,5 @@
 import React from "react";
-import type { Spot } from "../../hooks/posts/useProgramsInfinite";
+import { Spot } from "../actions/programs";
 
 interface Props {
   setLink: React.Dispatch<React.SetStateAction<string>>;
