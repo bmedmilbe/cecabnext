@@ -2,8 +2,30 @@ import { PostAction } from "@/app/actions/posts";
 import BlogSideBar from "@/app/components/BlogSideBar";
 import PageHeader from "@/app/components/PageHeader";
 import Link from "next/link";
-import React from "react";
+import type { Metadata, ResolvingMetadata } from "next";
 export const revalidate = 300;
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const slug = (await params).slug;
+
+  const post = await PostAction(slug);
+
+  const previousImages = (await parent).openGraph?.images || [];
+
+  return {
+    title: post.data?.title,
+    description: post.data?.beginnig,
+    openGraph: {
+      images: [post.data?.image || "", ...previousImages],
+    },
+  };
+}
 const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
 
