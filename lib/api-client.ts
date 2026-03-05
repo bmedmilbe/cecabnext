@@ -7,7 +7,11 @@ const apiRequest = async <T>(
   params: RequestInit = {},
 ): Promise<ActionAPIResponse<T>> => {
   try {
-    const url = `${process.env.API_BASE_URL || "http://localhost:8000"}${endpoint}`;
+    const url =
+      `${process.env.API_BASE_URL || "http://localhost:8000"}${endpoint}`.replace(
+        "//",
+        "/",
+      );
 
     const response = await fetch(url, {
       ...params,
