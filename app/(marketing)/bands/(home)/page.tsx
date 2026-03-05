@@ -1,6 +1,6 @@
 import { BandsListAction } from "@/app/actions/bands";
 import ProgramsCardInfinity from "@/app/components/infinities/ProgramsCardInfinity";
-
+export const revalidate = 300;
 const BandsPage = async () => {
   const bands = await BandsListAction();
   return (

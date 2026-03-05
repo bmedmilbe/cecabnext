@@ -13,7 +13,7 @@ import Partners from "../components/Partners";
 import WhyChooseUs from "../components/WhyChooseUs";
 import YearGols from "../components/YearGols";
 import { sliderData } from "./../data/data";
-
+export const revalidate = 300;
 export default async function Home() {
   const posts = await PostListAction();
   const goals = await GolListAction();

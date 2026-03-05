@@ -1,6 +1,6 @@
 import { AssociationsListAction } from "@/app/actions/associations";
 import AssociationCardsInfinity from "@/app/components/infinities/AssociationCardsInfinity";
-
+export const revalidate = 300;
 const AssossiationsPage = async () => {
   const associations = await AssociationsListAction();
   return (

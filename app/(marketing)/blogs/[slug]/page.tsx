@@ -3,7 +3,7 @@ import BlogSideBar from "@/app/components/BlogSideBar";
 import PageHeader from "@/app/components/PageHeader";
 import Link from "next/link";
 import React from "react";
-
+export const revalidate = 300;
 const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
 
