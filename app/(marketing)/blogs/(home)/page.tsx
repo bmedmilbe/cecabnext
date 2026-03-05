@@ -2,7 +2,7 @@ import { PostAction, PostListAction } from "@/app/actions/posts";
 import BlogCardsInfinity from "@/app/components/infinities/BlogCardsInfinity";
 
 import type { Metadata, ResolvingMetadata } from "next";
-
+export const revalidate = 300;
 type Props = {
   params: Promise<{ slug: string }>;
 };

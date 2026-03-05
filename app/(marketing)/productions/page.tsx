@@ -1,7 +1,7 @@
 import { GolListAction } from "@/app/actions/gols";
 import YearGoalCardInfinity from "@/app/components/infinities/YearGoalCardInfinity";
 import Link from "next/link";
-
+export const revalidate = 300;
 const ProductionsPage = async () => {
   const goals = await GolListAction();
   return (
