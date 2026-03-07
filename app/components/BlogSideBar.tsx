@@ -1,4 +1,4 @@
-import { Post, PostListAction } from "../actions/posts";
+import { Post, PostListAction } from "../../lib/services/posts";
 import BlogSideCard from "./BlogSideCard";
 interface Props {
   post: Post;

@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Association } from "../actions/associations";
+import { Association } from "../../lib/services/associations";
 import { getDay, getMonth, getYear } from "../data/dates";
 
 interface Props {

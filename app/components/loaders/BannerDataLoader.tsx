@@ -1,5 +1,5 @@
 import { sliderData } from "../../data/data";
-import { PostListAction } from "../../actions/posts";
+import { PostListAction } from "../../../lib/services/posts";
 import Banner from "../Banner";
 
 const BannerDataLoader = async () => {

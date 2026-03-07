@@ -1,4 +1,4 @@
-import { TeamListAction } from "@/app/actions/teams";
+import { TeamListAction } from "@/lib/services/teams";
 import TeamDisplay from "@/app/components/TeamDisplay";
 export const revalidate = 300;
 const TeamPage = async () => {

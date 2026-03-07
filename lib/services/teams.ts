@@ -1,5 +1,3 @@
-"use server";
-
 import { GeneralListAction } from "./generals";
 interface Role {
   id: number;

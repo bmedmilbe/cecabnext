@@ -1,5 +1,5 @@
 "use client";
-import { Spot, SpotsListAction } from "@/app/actions/programs";
+import { Spot, SpotsListAction } from "@/lib/services/programs";
 import FsLightbox from "fslightbox-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";

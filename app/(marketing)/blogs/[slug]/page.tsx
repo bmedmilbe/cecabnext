@@ -1,4 +1,4 @@
-import { PostAction } from "@/app/actions/posts";
+import { PostAction } from "@/lib/services/posts";
 import BlogSideBar from "@/app/components/BlogSideBar";
 import PageHeader from "@/app/components/PageHeader";
 import Link from "next/link";

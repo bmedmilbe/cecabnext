@@ -1,4 +1,4 @@
-import { Team } from "../actions/teams";
+import { Team } from "../../lib/services/teams";
 
 interface Props {
   initialData: Team[];

@@ -1,5 +1,5 @@
 import { BiTimeFive } from "react-icons/bi";
-import { Post } from "../actions/posts";
+import { Post } from "../../lib/services/posts";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 

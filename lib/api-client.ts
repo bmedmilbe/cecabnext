@@ -1,6 +1,6 @@
 "use server";
 
-import { ActionAPIResponse } from "@/app/actions/global";
+import { ActionAPIResponse } from "@/lib/services/global";
 
 const apiRequest = async <T>(
   endpoint: string,

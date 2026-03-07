@@ -1,5 +1,3 @@
-"use server";
-
 import { GeneralListAction } from "./generals";
 
 export interface Pathener {

@@ -1,4 +1,4 @@
-import { PostAction, PostListAction } from "@/app/actions/posts";
+import { PostAction, PostListAction } from "@/lib/services/posts";
 import BlogCardsInfinity from "@/app/components/infinities/BlogCardsInfinity";
 
 const BlogsPage = async () => {

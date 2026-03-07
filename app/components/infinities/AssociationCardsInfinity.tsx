@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 import {
   Association,
   AssociationsListAction,
-} from "../../actions/associations";
+} from "../../../lib/services/associations";
 import AssociationCard from "./../AssociationCard";
 
 interface Props {

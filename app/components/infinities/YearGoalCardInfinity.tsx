@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState, useCallback, useRef } from "react";
 import { useInView } from "react-intersection-observer";
-import { GolListAction, YearGol } from "@/app/actions/gols";
+import { GolListAction, YearGol } from "@/lib/services/gols";
 import YearGoalCard from "../YearGoalCard";
 
 interface Props {

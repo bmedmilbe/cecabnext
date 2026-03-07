@@ -1,7 +1,7 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
-import { Pathener } from "../actions/pathner";
+import { Pathener } from "../../lib/services/pathner";
 // Import CSS (standard for v8)
 import "swiper/css";
 import "swiper/css/navigation";

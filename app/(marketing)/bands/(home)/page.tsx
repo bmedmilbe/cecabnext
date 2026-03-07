@@ -1,4 +1,4 @@
-import { BandsListAction } from "@/app/actions/bands";
+import { BandsListAction } from "@/lib/services/bands";
 import ProgramsCardInfinity from "@/app/components/infinities/ProgramsCardInfinity";
 export const revalidate = 300;
 const BandsPage = async () => {
