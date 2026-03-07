@@ -1,13 +1,13 @@
-import { GeneralListAction } from "./generals";
-interface Role {
+import { GeneralList } from "./generals";
+type RoleType = {
   id: number;
   title: string;
-}
-export interface Team {
+};
+export type TeamType = {
   id: number;
   name: string;
   picture: string;
-  role: Role;
-}
-export const TeamListAction = async () =>
-  await GeneralListAction<Team>("/cecab/teams/", null);
+  role: RoleType;
+};
+export const ListTeam = async () =>
+  await GeneralList<TeamType>("/cecab/teams/", null);

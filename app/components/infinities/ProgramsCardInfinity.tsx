@@ -1,12 +1,13 @@
 "use client";
-import { Spot, SpotsListAction } from "@/lib/services/programs";
+import { ListSpots } from "@/lib/services/programs";
 import FsLightbox from "fslightbox-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import ProgramArea from "../ProgramArea";
+import { SpotType } from "@/lib/services/bands";
 
 interface Props {
-  initialData: Spot[];
+  initialData: SpotType[];
   nextPage: string | null;
 }
 
@@ -14,7 +15,7 @@ const ProgramsCardInfinity = ({ initialData, nextPage }: Props) => {
   const [currentStatus, setCurrentStatus] = useState(false);
   const [link, setLink] = useState("");
 
-  const [allData, setAllData] = useState<Spot[]>(initialData);
+  const [allData, setAllData] = useState<SpotType[]>(initialData);
   const [currentNextPage, setCurrentNextPage] = useState(nextPage);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -33,7 +34,7 @@ const ProgramsCardInfinity = ({ initialData, nextPage }: Props) => {
 
     try {
       console.log("Fetching URL:", currentNextPage);
-      const response = await SpotsListAction(currentNextPage);
+      const response = await ListSpots(currentNextPage);
 
       if (response?.data) {
         const newPosts = response.data.results || [];

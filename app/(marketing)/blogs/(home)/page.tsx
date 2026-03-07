@@ -1,8 +1,8 @@
-import { PostAction, PostListAction } from "@/lib/services/posts";
+import { GetPost, ListPosts } from "@/lib/services/posts";
 import BlogCardsInfinity from "@/app/components/infinities/BlogCardsInfinity";
 
 const BlogsPage = async () => {
-  const postsi = await PostListAction();
+  const postsi = await ListPosts();
   return (
     <BlogCardsInfinity
       postsi={[...(postsi.data?.results || [])]}

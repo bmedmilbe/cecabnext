@@ -1,10 +1,10 @@
 "use client";
 
-import { Post } from "../../lib/services/posts";
+import { PostType } from "../../lib/services/posts";
 import BlogCardsInfinity from "./infinities/BlogCardsInfinity";
 
 interface Props {
-  postsi: Post[];
+  postsi: PostType[];
   nextPage: string | null;
 }
 

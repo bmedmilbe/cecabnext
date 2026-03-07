@@ -1,16 +1,16 @@
 "use client";
 import { useEffect, useState, useCallback, useRef } from "react";
 import BlogCard from "../BlogCard";
-import { Post, PostListAction } from "../../../lib/services/posts";
+import { PostType, ListPosts } from "../../../lib/services/posts";
 import { useInView } from "react-intersection-observer";
 
 interface Props {
-  postsi: Post[];
+  postsi: PostType[];
   nextPage: string | null;
 }
 
 const BlogCardsInfinity = ({ postsi, nextPage }: Props) => {
-  const [posts, setPosts] = useState<Post[]>(postsi);
+  const [posts, setPosts] = useState<PostType[]>(postsi);
   const [currentNextPage, setCurrentNextPage] = useState(nextPage);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -29,7 +29,7 @@ const BlogCardsInfinity = ({ postsi, nextPage }: Props) => {
 
     try {
       console.log("Fetching URL:", currentNextPage);
-      const response = await PostListAction(currentNextPage);
+      const response = await ListPosts(currentNextPage);
 
       if (response?.data) {
         const newPosts = response.data.results || [];

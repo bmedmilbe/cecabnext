@@ -1,14 +1,8 @@
-import { GeneralListAction, GetGeneralAction } from "./generals";
+import { SpotType } from "./bands";
+import { GeneralList, GetGeneral } from "./generals";
 
-export type Spot = {
-  id: number;
-  title: string;
-  created_at: string;
-  link: string;
-  picture: string;
-};
-export const SpotsListAction = async (nextPage: string | null = null) =>
-  await GeneralListAction<Spot>("/cecab/spots/", nextPage);
+export const ListSpots = async (nextPage: string | null = null) =>
+  await GeneralList<SpotType>("/cecab/spots/", nextPage);
 
-export const SpotAction = async (slug: string) =>
-  await GetGeneralAction<Spot>(`/cecab/spots/${slug}/`);
+export const GetSpot = async (slug: string) =>
+  await GetGeneral<SpotType>(`/cecab/spots/${slug}/`);

@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { YearGol } from "../../lib/services/gols";
+import { YearGolType } from "../../lib/services/gols";
 
 interface Props {
-  year: YearGol;
+  year: YearGolType;
 }
 const YearGoalCard = ({ year }: Props) => {
   return (

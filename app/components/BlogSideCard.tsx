@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { Post } from "../../lib/services/posts";
+import { PostType } from "../../lib/services/posts";
 interface Props {
-  post: Post;
+  post: PostType;
 }
 const BlogSideCard = ({ post }: Props) => {
   return (

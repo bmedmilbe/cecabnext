@@ -1,8 +1,8 @@
-import { PathnerAction } from "../../../lib/services/pathner";
+import { ListPathners } from "../../../lib/services/pathner";
 import Partners from "../Partners";
 
 const ParthnersLoader = async () => {
-  const pathners = await PathnerAction();
+  const pathners = await ListPathners();
 
   return (
     <>

@@ -1,12 +1,12 @@
-import { GeneralListAction } from "./generals";
+import { GeneralList } from "./generals";
 
-export interface YearGol {
+export type YearGolType = {
   id: number;
   year: number;
   associations: number;
   agricultors: number;
   products: number;
-}
+};
 
-export const GolListAction = async (nextPage: string | null = null) =>
-  await GeneralListAction<YearGol>("/cecab/yeargols/", nextPage);
+export const ListGoals = async (nextPage: string | null = null) =>
+  await GeneralList<YearGolType>("/cecab/yeargols/", nextPage);

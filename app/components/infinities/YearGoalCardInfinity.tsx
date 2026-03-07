@@ -1,16 +1,16 @@
 "use client";
 import { useEffect, useState, useCallback, useRef } from "react";
 import { useInView } from "react-intersection-observer";
-import { GolListAction, YearGol } from "@/lib/services/gols";
+import { ListGoals, YearGolType } from "@/lib/services/gols";
 import YearGoalCard from "../YearGoalCard";
 
 interface Props {
-  postsi: YearGol[];
+  postsi: YearGolType[];
   nextPage: string | null;
 }
 
 const YearGoalCardInfinity = ({ postsi, nextPage }: Props) => {
-  const [posts, setPosts] = useState<YearGol[]>(postsi);
+  const [posts, setPosts] = useState<YearGolType[]>(postsi);
   const [currentNextPage, setCurrentNextPage] = useState(nextPage);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -29,7 +29,7 @@ const YearGoalCardInfinity = ({ postsi, nextPage }: Props) => {
 
     try {
       console.log("Fetching URL:", currentNextPage);
-      const response = await GolListAction(currentNextPage);
+      const response = await ListGoals(currentNextPage);
 
       if (response?.data) {
         const newPosts = response.data.results || [];

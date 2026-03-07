@@ -2,13 +2,13 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
-import { Team } from "../../lib/services/teams";
+import { TeamType } from "../../lib/services/teams";
 // Import CSS (standard for v8)
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 interface Props {
-  teams: Team[];
+  teams: TeamType[];
 }
 const OurTeamSlider = ({ teams }: Props) => {
   return (

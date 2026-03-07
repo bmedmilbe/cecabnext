@@ -1,13 +1,13 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
-import { Pathener } from "../../lib/services/pathner";
+import { PathenerType } from "../../lib/services/pathner";
 // Import CSS (standard for v8)
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 interface Props {
-  pathners: Pathener[];
+  pathners: PathenerType[];
 }
 const Partners = ({ pathners }: Props) => {
   return (

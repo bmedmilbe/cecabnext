@@ -1,10 +1,10 @@
 import { BiTimeFive } from "react-icons/bi";
-import { Post } from "../../lib/services/posts";
+import { PostType } from "../../lib/services/posts";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 interface Props {
-  post: Post;
+  post: PostType;
 }
 const BlogCard = ({ post }: Props) => {
   const navigate = useRouter();

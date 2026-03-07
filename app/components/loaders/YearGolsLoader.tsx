@@ -1,8 +1,8 @@
-import { GolListAction } from "../../../lib/services/gols";
+import { ListGoals } from "../../../lib/services/gols";
 import YearGols from "./../YearGols";
 
 const YearGolsLoader = async () => {
-  const goals = await GolListAction();
+  const goals = await ListGoals();
 
   return (
     <>

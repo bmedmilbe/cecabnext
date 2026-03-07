@@ -1,4 +1,4 @@
-import { PostAction } from "@/lib/services/posts";
+import { GetPost } from "@/lib/services/posts";
 import BlogSideBar from "@/app/components/BlogSideBar";
 import PageHeader from "@/app/components/PageHeader";
 import Link from "next/link";
@@ -14,7 +14,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const slug = (await params).slug;
 
-  const post = await PostAction(slug);
+  const post = await GetPost(slug);
 
   const previousImages = (await parent).openGraph?.images || [];
 
@@ -29,7 +29,7 @@ export async function generateMetadata(
 const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
 
-  const { data: post } = await PostAction(slug);
+  const { data: post } = await GetPost(slug);
 
   if (!post) {
     return (

@@ -3,9 +3,9 @@ import {
   ActionAPIResponse,
   ActionAPIResponseList,
   PaginatedResult,
-} from "./global";
+} from "./response-types";
 
-export async function GeneralListAction<T>(
+export async function GeneralList<T>(
   endpoint: string,
   nextPage: string | null = null,
 ): Promise<ActionAPIResponseList<T>> {
@@ -32,7 +32,7 @@ export async function GeneralListAction<T>(
   }
 }
 
-export async function GetGeneralAction<T>(
+export async function GetGeneral<T>(
   endpoint: string,
 ): Promise<ActionAPIResponse<T>> {
   try {
