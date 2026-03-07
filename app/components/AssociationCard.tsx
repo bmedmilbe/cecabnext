@@ -1,10 +1,10 @@
 "use client";
 import Link from "next/link";
-import { Association } from "../../lib/services/associations";
+import { AssociationType } from "../../lib/services/associations";
 import { getDay, getMonth, getYear } from "../data/dates";
 
 interface Props {
-  association: Association;
+  association: AssociationType;
 }
 
 const AssociationCard = ({ association }: Props) => {

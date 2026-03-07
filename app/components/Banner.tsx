@@ -11,9 +11,9 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
 
-import { Post } from "../../lib/services/posts";
+import { PostType } from "../../lib/services/posts";
 interface Props {
-  slides: Post[];
+  slides: PostType[];
 }
 const Banner = ({ slides }: Props) => {
   const [toggler, setToggler] = useState(false);

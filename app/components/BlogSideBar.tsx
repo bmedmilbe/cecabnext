@@ -1,10 +1,10 @@
-import { Post, PostListAction } from "../../lib/services/posts";
+import { PostType, ListPosts } from "../../lib/services/posts";
 import BlogSideCard from "./BlogSideCard";
 interface Props {
-  post: Post;
+  post: PostType;
 }
 const BlogSideBar = async ({ post }: Props) => {
-  const response = await PostListAction();
+  const response = await ListPosts();
   return (
     <>
       <aside className="widget-area pt-3" id="secondary">

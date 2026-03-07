@@ -1,7 +1,7 @@
-import { PostListAction } from "../../lib/services/posts";
+import { ListPosts } from "../../lib/services/posts";
 
 const HomePosts = async () => {
-  const posts = await PostListAction();
+  const posts = await ListPosts();
   return (
     <ul>
       {posts?.data?.results?.map((post, index) => (

@@ -1,12 +1,12 @@
-import { Post, PostListAction } from "../../lib/services/posts";
+import { PostType, ListPosts } from "../../lib/services/posts";
 import BlogCard from "./BlogCard";
 interface prop {
   currentNextPage: string | null;
   ref: (node?: Element | null | undefined) => void;
-  data: Post[];
+  data: PostType[];
 }
 const Book = async ({ currentNextPage, ref, data }: prop) => {
-  const moreDataFetched = await PostListAction(currentNextPage);
+  const moreDataFetched = await ListPosts(currentNextPage);
   //   const [oldData, setOldData] = useState(data);
 
   // return {

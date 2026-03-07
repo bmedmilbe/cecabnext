@@ -1,9 +1,9 @@
-import { GeneralListAction } from "./generals";
+import { GeneralList } from "./generals";
 
-export interface Pathener {
+export type PathenerType = {
   id: number;
   title: string;
   picture: string;
-}
-export const PathnerAction = async () =>
-  await GeneralListAction<Pathener>("/cecab/pathners/");
+};
+export const ListPathners = async () =>
+  await GeneralList<PathenerType>("/cecab/pathners/");

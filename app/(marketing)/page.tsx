@@ -1,7 +1,7 @@
-import { GolListAction } from "../../lib/services/gols";
-import { PathnerAction } from "../../lib/services/pathner";
-import { PostListAction } from "../../lib/services/posts";
-import { TeamListAction } from "../../lib/services/teams";
+import { ListGoals } from "../../lib/services/gols";
+import { ListPathners } from "../../lib/services/pathner";
+import { ListPosts } from "../../lib/services/posts";
+import { ListTeam } from "../../lib/services/teams";
 import About from "../components/About";
 import Banner from "../components/Banner";
 import JoinNow from "../components/JoinNow";
@@ -15,11 +15,11 @@ import YearGols from "../components/YearGols";
 import { sliderData } from "./../data/data";
 export const revalidate = 300;
 export default async function Home() {
-  const posts = await PostListAction();
-  const goals = await GolListAction();
-  const pathners = await PathnerAction();
-  const teams = await TeamListAction();
-  const postsi = await PostListAction();
+  const posts = await ListPosts();
+  const goals = await ListGoals();
+  const pathners = await ListPathners();
+  const teams = await ListTeam();
+  const postsi = await ListPosts();
   return (
     <>
       <Banner slides={[...(posts.data?.results || []), ...sliderData]} />

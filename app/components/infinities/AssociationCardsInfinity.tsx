@@ -2,13 +2,13 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import {
-  Association,
-  AssociationsListAction,
+  AssociationType,
+  ListAssociations,
 } from "../../../lib/services/associations";
 import AssociationCard from "./../AssociationCard";
 
 interface Props {
-  associations: Association[];
+  associations: AssociationType[];
   nextPage: string | null;
 }
 
@@ -17,7 +17,7 @@ const AssociationCardsInfinity = ({
   nextPage,
 }: Props) => {
   const [associations, setAssociations] =
-    useState<Association[]>(initialAssociations);
+    useState<AssociationType[]>(initialAssociations);
   const [currentNextPage, setCurrentNextPage] = useState(nextPage);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -36,7 +36,7 @@ const AssociationCardsInfinity = ({
 
     try {
       console.log("Fetching URL:", currentNextPage);
-      const response = await AssociationsListAction(currentNextPage);
+      const response = await ListAssociations(currentNextPage);
 
       if (response?.data) {
         const newPosts = response.data.results || [];

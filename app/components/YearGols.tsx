@@ -2,14 +2,14 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
 import Link from "next/link";
-import { YearGol } from "../../lib/services/gols";
+import { YearGolType } from "../../lib/services/gols";
 // Import CSS (standard for v8)
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 interface Props {
-  goals: YearGol[];
+  goals: YearGolType[];
 }
 const YearGols = ({ goals }: Props) => {
   return (

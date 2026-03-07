@@ -1,9 +1,9 @@
-import { GolListAction } from "@/lib/services/gols";
+import { ListGoals } from "@/lib/services/gols";
 import YearGoalCardInfinity from "@/app/components/infinities/YearGoalCardInfinity";
 import Link from "next/link";
 export const revalidate = 300;
 const ProductionsPage = async () => {
-  const goals = await GolListAction();
+  const goals = await ListGoals();
   return (
     <div className="row mt-4">
       <YearGoalCardInfinity

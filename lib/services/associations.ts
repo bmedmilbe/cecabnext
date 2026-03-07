@@ -1,6 +1,6 @@
-import { GeneralListAction, GetGeneralAction } from "./generals";
+import { GeneralList, GetGeneral } from "./generals";
 
-export type Association = {
+export type AssociationType = {
   id: number;
   name: string;
   registered: string;
@@ -10,8 +10,8 @@ export type Association = {
   images: [];
   district_name: string;
 };
-export const AssociationsListAction = async (nextPage: string | null = null) =>
-  await GeneralListAction<Association>("/cecab/associations/", nextPage);
+export const ListAssociations = async (nextPage: string | null = null) =>
+  await GeneralList<AssociationType>("/cecab/associations/", nextPage);
 
-export const AssociationAction = async (slug: string) =>
-  await GetGeneralAction<Association>(`/cecab/associations/${slug}/`);
+export const GetAssociation = async (slug: string) =>
+  await GetGeneral<AssociationType>(`/cecab/associations/${slug}/`);

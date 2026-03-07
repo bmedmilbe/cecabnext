@@ -1,7 +1,10 @@
 "use server";
 
 import apiRequest from "@/lib/api-client";
-import { ActionFormResponse, ActionResponse } from "../../lib/services/global";
+import {
+  ActionFormResponse,
+  ActionResponse,
+} from "../../lib/services/response-types";
 import { InputType } from "../components/AddressForm";
 
 export default async function messageAction(

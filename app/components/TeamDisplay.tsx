@@ -1,7 +1,7 @@
-import { Team } from "../../lib/services/teams";
+import { TeamType } from "../../lib/services/teams";
 
 interface Props {
-  initialData: Team[];
+  initialData: TeamType[];
 }
 const TeamDisplay = ({ initialData }: Props) => {
   return (

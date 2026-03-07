@@ -1,6 +1,6 @@
-import { GeneralListAction, GetGeneralAction } from "./generals";
+import { GeneralList, GetGeneral } from "./generals";
 
-export type Post = {
+export type PostType = {
   id: number;
   title: string;
   image: string;
@@ -14,8 +14,8 @@ export type Post = {
   prev: string;
   next: string;
 };
-export const PostListAction = async (nextPage: string | null = null) =>
-  await GeneralListAction<Post>("/cecab/posts/", nextPage);
+export const ListPosts = async (nextPage: string | null = null) =>
+  await GeneralList<PostType>("/cecab/posts/", nextPage);
 
-export const PostAction = async (slug: string) =>
-  await GetGeneralAction<Post>(`/cecab/posts/${slug}/`);
+export const GetPost = async (slug: string) =>
+  await GetGeneral<PostType>(`/cecab/posts/${slug}/`);

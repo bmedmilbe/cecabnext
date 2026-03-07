@@ -1,8 +1,8 @@
-import { TeamListAction } from "@/lib/services/teams";
+import { ListTeam } from "@/lib/services/teams";
 import TeamDisplay from "@/app/components/TeamDisplay";
 export const revalidate = 300;
 const TeamPage = async () => {
-  const team = await TeamListAction();
+  const team = await ListTeam();
   return <TeamDisplay initialData={[...(team.data?.results || [])]} />;
 };
 

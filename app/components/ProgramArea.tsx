@@ -1,11 +1,11 @@
+import { SpotType } from "@/lib/services/bands";
 import React from "react";
-import { Spot } from "../../lib/services/programs";
 
 interface Props {
   setLink: React.Dispatch<React.SetStateAction<string>>;
   currentStatus: boolean;
   setCurrentStatus: React.Dispatch<React.SetStateAction<boolean>>;
-  data: Spot;
+  data: SpotType;
   defaultPicture: string;
 }
 const ProgramArea = ({
