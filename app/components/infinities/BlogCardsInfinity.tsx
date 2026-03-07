@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState, useCallback, useRef } from "react";
 import BlogCard from "../BlogCard";
-import { Post, PostListAction } from "../../actions/posts";
+import { Post, PostListAction } from "../../../lib/services/posts";
 import { useInView } from "react-intersection-observer";
 
 interface Props {

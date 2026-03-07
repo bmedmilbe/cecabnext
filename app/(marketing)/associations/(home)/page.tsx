@@ -1,4 +1,4 @@
-import { AssociationsListAction } from "@/app/actions/associations";
+import { AssociationsListAction } from "@/lib/services/associations";
 import AssociationCardsInfinity from "@/app/components/infinities/AssociationCardsInfinity";
 export const revalidate = 300;
 const AssossiationsPage = async () => {

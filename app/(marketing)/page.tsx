@@ -1,7 +1,7 @@
-import { GolListAction } from "../actions/gols";
-import { PathnerAction } from "../actions/pathner";
-import { PostListAction } from "../actions/posts";
-import { TeamListAction } from "../actions/teams";
+import { GolListAction } from "../../lib/services/gols";
+import { PathnerAction } from "../../lib/services/pathner";
+import { PostListAction } from "../../lib/services/posts";
+import { TeamListAction } from "../../lib/services/teams";
 import About from "../components/About";
 import Banner from "../components/Banner";
 import JoinNow from "../components/JoinNow";

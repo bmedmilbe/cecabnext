@@ -1,4 +1,4 @@
-import { PathnerAction } from "../../actions/pathner";
+import { PathnerAction } from "../../../lib/services/pathner";
 import Partners from "../Partners";
 
 const ParthnersLoader = async () => {

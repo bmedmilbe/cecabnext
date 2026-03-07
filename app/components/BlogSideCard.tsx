@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Post } from "../actions/posts";
+import { Post } from "../../lib/services/posts";
 interface Props {
   post: Post;
 }

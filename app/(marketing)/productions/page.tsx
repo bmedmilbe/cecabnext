@@ -1,4 +1,4 @@
-import { GolListAction } from "@/app/actions/gols";
+import { GolListAction } from "@/lib/services/gols";
 import YearGoalCardInfinity from "@/app/components/infinities/YearGoalCardInfinity";
 import Link from "next/link";
 export const revalidate = 300;

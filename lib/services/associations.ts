@@ -1,5 +1,3 @@
-"use server";
-
 import { GeneralListAction, GetGeneralAction } from "./generals";
 
 export type Association = {

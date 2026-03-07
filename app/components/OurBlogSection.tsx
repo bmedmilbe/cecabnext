@@ -1,6 +1,6 @@
 "use client";
 
-import { Post } from "../actions/posts";
+import { Post } from "../../lib/services/posts";
 import BlogCardsInfinity from "./infinities/BlogCardsInfinity";
 
 interface Props {

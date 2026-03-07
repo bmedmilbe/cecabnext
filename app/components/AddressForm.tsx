@@ -2,7 +2,7 @@
 import React, { useActionState, useEffect } from "react";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import { ActionFormResponse, ActionResponse } from "../actions/global";
+import { ActionFormResponse, ActionResponse } from "../../lib/services/global";
 import messageAction from "../actions/message";
 const MySwal = withReactContent(Swal);
 

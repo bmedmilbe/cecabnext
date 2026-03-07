@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { YearGol } from "../actions/gols";
+import { YearGol } from "../../lib/services/gols";
 
 interface Props {
   year: YearGol;

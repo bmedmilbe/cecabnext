@@ -1,12 +1,9 @@
-"use server";
-
 import apiRequest from "@/lib/api-client";
 import {
   ActionAPIResponse,
   ActionAPIResponseList,
   PaginatedResult,
 } from "./global";
-import { Post } from "./posts";
 
 export async function GeneralListAction<T>(
   endpoint: string,

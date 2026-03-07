@@ -1,5 +1,5 @@
-import { AssociationsListAction } from "@/app/actions/associations";
-import { SpotsListAction } from "@/app/actions/programs";
+import { AssociationsListAction } from "@/lib/services/associations";
+import { SpotsListAction } from "@/lib/services/programs";
 import AssociationCardsInfinity from "@/app/components/infinities/AssociationCardsInfinity";
 import ProgramsCardInfinity from "@/app/components/infinities/ProgramsCardInfinity";
 export const revalidate = 300;

@@ -11,7 +11,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
 
-import { Post } from "../actions/posts";
+import { Post } from "../../lib/services/posts";
 interface Props {
   slides: Post[];
 }
