@@ -1,9 +1,10 @@
 "use client";
-import { SpotType, ListSpots } from "@/lib/services/programs";
+import { ListSpots } from "@/lib/services/programs";
 import FsLightbox from "fslightbox-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import ProgramArea from "../ProgramArea";
+import { SpotType } from "@/lib/services/bands";
 
 interface Props {
   initialData: SpotType[];
