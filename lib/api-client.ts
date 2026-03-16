@@ -17,6 +17,7 @@ const apiRequest = async <T>(
       ...params,
       headers: {
         "Content-Type": "application/json",
+        "X-Tenant-ID": "5",
         ...params.headers,
       },
     });
