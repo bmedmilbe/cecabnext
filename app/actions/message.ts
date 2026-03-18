@@ -19,13 +19,13 @@ export default async function messageAction(
     email: form.get("email") as string,
   };
   try {
-    const response = await apiRequest("/cecab/messages/", {
+    const response = await apiRequest("/cms/messages", {
       body: JSON.stringify(data),
       method: "POST",
     });
 
     if (!response.success) {
-      return { ...response, input: data };
+      return { ...response, input: data, success: false };
     } else {
       return {
         success: true,

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "CECAB STP",
     images: [
       {
-        url: "https://bm-edmilbe-bucket.s3.amazonaws.com/cecab/blog/post_images/imagem-2.jpg",
+        url: "https://bm-edmilbe-bucket.s3.amazonaws.com/cms/blog/post_images/imagem-2.jpg",
         width: 1200,
         height: 630,
       },
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: "Cacau Biológico de STP | CECAB",
     description: "Produção e exportação sustentável de cacau biológico.",
     images: [
-      "https://bm-edmilbe-bucket.s3.amazonaws.com/cecab/blog/post_images/imagem-2.jpg",
+      "https://bm-edmilbe-bucket.s3.amazonaws.com/cms/blog/post_images/imagem-2.jpg",
     ],
   },
   icons: {

@@ -48,8 +48,8 @@ const Banner = ({ slides }: Props) => {
                     <div className="main-banner-content">
                       <span className="sub-title">{slide.info}</span>
                       <h1>{slide.title}</h1>
-                      {slide.beginnig && (
-                        <span className="sub-title">{slide.beginnig}</span>
+                      {slide.beginning && (
+                        <span className="sub-title">{slide.beginning}</span>
                       )}
 
                       <div className="btn-box">

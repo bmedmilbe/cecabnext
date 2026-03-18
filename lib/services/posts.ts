@@ -6,7 +6,7 @@ export type PostType = {
   image: string;
   picture: string;
   info: string;
-  beginnig: string;
+  beginning: string;
   slug: string;
   text: string;
   posted_at: string;
@@ -15,7 +15,7 @@ export type PostType = {
   next: string;
 };
 export const ListPosts = async (nextPage: string | null = null) =>
-  await GeneralList<PostType>("/cecab/posts/", nextPage);
+  await GeneralList<PostType>("/cms/posts", nextPage);
 
 export const GetPost = async (slug: string) =>
-  await GetGeneral<PostType>(`/cecab/posts/${slug}/`);
+  await GetGeneral<PostType>(`/cms/posts/${slug}`);

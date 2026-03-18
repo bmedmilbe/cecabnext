@@ -6,4 +6,4 @@ export type PathenerType = {
   picture: string;
 };
 export const ListPathners = async () =>
-  await GeneralList<PathenerType>("/cecab/pathners/");
+  await GeneralList<PathenerType>("/cms/partners");

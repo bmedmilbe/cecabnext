@@ -31,7 +31,7 @@ const BlogCard = ({ post }: Props) => {
               {post.title}
               {/* </Link> */}
             </h3>
-            <p>{post.beginnig.substring(0, 90)}...</p>
+            <p>{post.beginning.substring(0, 90)}...</p>
 
             {/* <Link href={`/blogs/${post.slug}`}> */}
             <Link className="default-btn" href={`/blogs/${post.slug}`}>

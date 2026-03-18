@@ -48,9 +48,9 @@ const apiRequest = async <T>(
     };
   } catch (error) {
     return {
-      data: {} as T,
-      success: true,
+      success: false,
       message: "Networking Error",
+      error: error instanceof Error ? error.message : "Unknown Error",
     };
   }
 };
