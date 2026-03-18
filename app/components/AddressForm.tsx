@@ -44,6 +44,7 @@ const AddressForm: React.FC = () => {
   );
 
   useEffect(() => {
+    console.log(state);
     if (state.success) {
       alertContent();
     }

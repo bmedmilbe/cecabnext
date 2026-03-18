@@ -11,7 +11,7 @@ export type AssociationType = {
   district_name: string;
 };
 export const ListAssociations = async (nextPage: string | null = null) =>
-  await GeneralList<AssociationType>("/cecab/associations/", nextPage);
+  await GeneralList<AssociationType>("/cms/associations", nextPage);
 
 export const GetAssociation = async (slug: string) =>
-  await GetGeneral<AssociationType>(`/cecab/associations/${slug}/`);
+  await GetGeneral<AssociationType>(`/cms/associations/${slug}/`);

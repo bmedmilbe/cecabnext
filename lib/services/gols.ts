@@ -9,4 +9,4 @@ export type YearGolType = {
 };
 
 export const ListGoals = async (nextPage: string | null = null) =>
-  await GeneralList<YearGolType>("/cecab/yeargols/", nextPage);
+  await GeneralList<YearGolType>("/cms/year-goals", nextPage);

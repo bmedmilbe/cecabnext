@@ -10,4 +10,4 @@ export type TeamType = {
   role: RoleType;
 };
 export const ListTeam = async () =>
-  await GeneralList<TeamType>("/cecab/teams/", null);
+  await GeneralList<TeamType>("/cms/teams", null);

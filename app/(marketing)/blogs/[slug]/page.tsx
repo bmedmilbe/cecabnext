@@ -20,7 +20,7 @@ export async function generateMetadata(
 
   return {
     title: post.data?.title,
-    description: post.data?.beginnig,
+    description: post.data?.beginning,
     openGraph: {
       images: [post.data?.image || "", ...previousImages],
     },
